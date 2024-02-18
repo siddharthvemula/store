@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Temps</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Temps</h2>
+
+<a href="/temp">Create Temp</a>
+<br>
+<br>
+
+<table>
+    <thead>
+        <td width="20%">Username</td>
+        <td width="20%">First Name</td>
+        <td width="20%">Last Name</td>
+        <td width="20%">Links</td>
+    </thead>
+    <tbody>
+        <tr th:each="temp: ${allTemps}">
+            <td>
+                <a th:text="${temp.username}" th:href="@{/temp(id=${temp.id})}">view</a>
+            </td>
+            <td th:text="${temp.firstName}" />
+            <td th:text="${temp.lastName}" />
+            <td>
+                <form action="#" th:action="@{/temp}" th:method="delete">
+                    <input type="hidden" name="id" th:value="${temp.id}">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

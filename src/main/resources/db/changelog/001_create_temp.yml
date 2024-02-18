@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-temp1
+      author: naveen
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: temp1
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: temp1_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: username
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: first_name
+                  type: VARCHAR(250)
+              - column:
+                  name: last_name
+                  type: VARCHAR(250)
+            tableName: temp1
