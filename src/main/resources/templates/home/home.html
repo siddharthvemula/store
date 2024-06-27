@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome to my shop</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Welcome to Sid's store</h2>
+
+
+<table>
+    <tbody>
+        <tr>
+            <td width="20%">
+                <img th:src="${allItems[0].imageUrl}" width="200"></img>
+                <br/>
+                <span th:text="${allItems[0].name}"/>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

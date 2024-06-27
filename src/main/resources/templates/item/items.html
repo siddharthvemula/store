@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Temps</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Items</h2>
+
+<a href="/item">Create Item</a>
+<br>
+<br>
+
+<table>
+    <thead>
+        <td width="20%"></td>
+        <td width="20%">Name</td>
+        <td width="20%">Description</td>
+        <td width="20%">Price</td>
+        <td width="20%">Links</td>
+    </thead>
+    <tbody>
+        <tr th:each="item: ${allItems}">
+            <td><img th:src="${item.imageUrl}" width="200"></img></td>
+            <td>
+                <a th:text="${item.name}" th:href="@{/item(id=${item.id})}">view</a>
+            </td>
+            <td th:text="${item.description}" />
+            <td th:text="${item.price}" />
+            <td>
+                <form action="#" th:action="@{/item}" th:method="delete">
+                    <input type="hidden" name="id" th:value="${item.id}">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
