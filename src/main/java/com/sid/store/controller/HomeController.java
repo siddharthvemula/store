@@ -15,7 +15,7 @@ public class HomeController {
     @Autowired
     ItemRepository itemRepository;
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String home(Model model) {
         Iterable<Item> allItems = itemRepository.findAll();
         model.addAttribute("allItems", allItems);

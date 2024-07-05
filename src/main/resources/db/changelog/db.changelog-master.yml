@@ -3,3 +3,5 @@ databaseChangeLog:
       file: db/changelog/001_create_temp.yml
   - include:
       file: db/changelog/002_create_item.yml
+  - include:
+      file: db/changelog/003_create_users.yml

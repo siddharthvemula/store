@@ -29,6 +29,21 @@
     }
 </style>
 
+<div th:replace="fragments/all :: header">...</div>
+
+<div class="container">
+    <div class="hero-unit">
+        <h1>Test</h1>
+        <p>
+            Welcome to the Spring MVC Quickstart application!
+            Get started quickly by signing up.
+        </p>
+        <p>
+            <a href="/signup" th:href="@{/signup}" class="btn btn-large btn-success">Sign up</a>
+        </p>
+    </div>
+</div>
+
 <table class ="center">
     <thead>
     <td width="25%"></td>
@@ -36,6 +51,7 @@
     <td width="25%">Description</td>
     <td width="25%">Price</td>
     </thead>
+
     <tbody>
     <tr th:each="item: ${allItems}">
         <td>
@@ -51,6 +67,9 @@
     </tr>
     </tbody>
 </table>
+
     <a href="/items"><button>Back to Items Page</button></a>
+
+<div th:replace="fragments/all :: css_js">...</div>
 </body>
 </html>
