@@ -36,10 +36,10 @@ public class ItemController {
         model.addAttribute("item", item);
         return "redirect:items";
     }
-//
-//    @DeleteMapping("/temp")
-//    public String deleteTemp(@RequestParam(name="id", required=true) Long id) {
-//        tempRepository.deleteById(id);
-//        return "redirect:temps";
-//    }
+
+    @DeleteMapping("/item")
+    public String deleteItem(@RequestParam(name="id", required=true) Long id) {
+        itemRepository.deleteById(id);
+        return "redirect:items";
+    }
 }

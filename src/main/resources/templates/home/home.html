@@ -7,23 +7,50 @@
         table, th, td {
           border: 1px solid black;
         }
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button {
+            width:60%;
+            height:20%;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
+<h1>Welcome to Sid's store</h1>
+<style>
+    h1 {
+      text-align: center;
+    }
+    table {
+        text-align: center;
+    }
+</style>
 
-<h2>Welcome to Sid's store</h2>
-
-
-<table>
+<table class ="center">
+    <thead>
+    <td width="25%"></td>
+    <td width="25%">Name</td>
+    <td width="25%">Description</td>
+    <td width="25%">Price</td>
+    </thead>
     <tbody>
-        <tr>
-            <td width="20%">
-                <img th:src="${allItems[0].imageUrl}" width="200"></img>
-                <br/>
-                <span th:text="${allItems[0].name}"/>
-            </td>
-        </tr>
+    <tr th:each="item: ${allItems}">
+        <td>
+            <a th:href="@{/product(id=${item.id})}">
+                <img th:src="${item.imageUrl}" width="200"> </img>
+            </a>
+        </td>
+        <td>
+            <a th:text="${item.name}" th:href="@{/item(id=${item.id})}">view</a>
+        </td>
+        <td th:text="${item.description}" />
+        <td th:text="${item.price}" />
+    </tr>
     </tbody>
 </table>
+    <a href="/items"><button>Back to Items Page</button></a>
 </body>
 </html>

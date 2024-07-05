@@ -21,4 +21,11 @@ public class HomeController {
         model.addAttribute("allItems", allItems);
         return "home/home";
     }
+
+    @GetMapping("/product")
+    public String product(@RequestParam(name="id", required=false) Long id, Model model) {
+        Item item = itemRepository.findById(id).get();
+        model.addAttribute("item", item);
+        return "home/product";
+    }
 }

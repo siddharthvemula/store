@@ -27,7 +27,11 @@
     </thead>
     <tbody>
         <tr th:each="item: ${allItems}">
-            <td><img th:src="${item.imageUrl}" width="200"></img></td>
+            <td>
+                <a href="/home">
+                    <img th:src="${item.imageUrl}" width="200"> </img>
+                </a>
+            </td>
             <td>
                 <a th:text="${item.name}" th:href="@{/item(id=${item.id})}">view</a>
             </td>
