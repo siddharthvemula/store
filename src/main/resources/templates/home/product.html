@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome to my Shop</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>Product Details</h1>
+<style>
+    h1 {
+      text-align: center;
+    }
+</style>
+<img th:src="${item.imageUrl}" width="400"> </img>
+<table class ="center">
+    <thead>
+    <td width="20%">Name</td>
+    <td width="20%">Description</td>
+    <td width="20%">Price</td>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${item.name}" />
+        <td th:text="${item.description}" />
+        <td th:text="${item.price}" />
+    </tr>
+    </tbody>
+</table>
+
+<div style="color: blue; font-size: 20px q" th:utext="${item.description}"></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="/home"><button>Home Page</button></a>
+<td>
+    <a href="/home"><button>Add to Cart</button></a>
+</td>
+</body>
+</html>
