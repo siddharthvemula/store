@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Welcome to my shop</title>
+<head>+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <style type="text/css">
         table, th, td {
@@ -19,7 +18,6 @@
     </style>
 </head>
 <body>
-<h1>Welcome to Sid's store</h1>
 <style>
     h1 {
       text-align: center;
@@ -30,21 +28,18 @@
 </style>
 
 <div th:replace="fragments/all :: header">...</div>
-
+<br>
+<br>
+<br>
 <div class="container">
     <div class="hero-unit">
-        <h1>Test</h1>
-        <p>
-            Welcome to the Spring MVC Quickstart application!
-            Get started quickly by signing up.
-        </p>
-        <p>
-            <a href="/signup" th:href="@{/signup}" class="btn btn-large btn-success">Sign up</a>
-        </p>
+        <h1>Velocity</h1>
     </div>
 </div>
-
-<table class ="center">
+<br>
+<br>
+<br>
+<table class ="center table">
     <thead>
     <td width="25%"></td>
     <td width="25%">Name</td>
@@ -55,9 +50,9 @@
     <tbody>
     <tr th:each="item: ${allItems}">
         <td>
-            <a th:href="@{/product(id=${item.id})}">
+            <a th:href="@{/product(id=${item.id})}"><button>
                 <img th:src="${item.imageUrl}" width="200"> </img>
-            </a>
+            </button></a>
         </td>
         <td>
             <a th:text="${item.name}" th:href="@{/item(id=${item.id})}">view</a>
@@ -68,7 +63,7 @@
     </tbody>
 </table>
 
-    <a href="/items"><button>Back to Items Page</button></a>
+    <a href="/items"><button class="btn btn-primary">Back to Items Page</button></a>
 
 <div th:replace="fragments/all :: css_js">...</div>
 </body>

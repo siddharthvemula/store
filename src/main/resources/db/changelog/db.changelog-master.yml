@@ -5,3 +5,5 @@ databaseChangeLog:
       file: db/changelog/002_create_item.yml
   - include:
       file: db/changelog/003_create_users.yml
+  - include:
+      file: db/changelog/004_create_cart.yml

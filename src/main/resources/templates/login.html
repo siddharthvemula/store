@@ -3,14 +3,20 @@
     <title>Please Log In</title>
 </head>
 <body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="https://cdn.dribbble.com/users/1739239/screenshots/4555416/media/99964575bca2185dc0ae2cb7c73bb2ef.jpg" width="120" height="100" class="d-inline-block align-top" alt="">
+    </a>
+</nav>
     <div class="container">
         <form th:action="@{/login}" method="post" class="form-signin">
-            <h2 class="form-signin-heading">Please sign in</h2>
+            <h2 class="form-signin-heading">Sign In Form</h2>
             <label class="sr-only">Username</label>
             <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
             <label class="sr-only">Password</label>
             <input type="password" name="password" class="form-control" placeholder="Password" required>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <br>
+            <button type="submit" class="btn btn-primary">  Sign In</button>
         </form>
     </div>
     <div th:replace="~{fragments/all :: css_js}">...</div>
