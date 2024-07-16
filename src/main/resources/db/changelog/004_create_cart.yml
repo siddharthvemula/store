@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-cart
+      author: naveen
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: cart
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: cart_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: item_id
+                  type: BIGINT
+              - column:
+                  name: quantity
+                  type: int
+            tableName: cart
